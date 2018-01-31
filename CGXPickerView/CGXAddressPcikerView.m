@@ -45,7 +45,7 @@
                            Manager:(CGXPickerViewManager *)manager
                                ResultBlock:(CGXAddressResultBlock)resultBlock
 {
-    CGXAddressPcikerView *addressPickerView = [[CGXAddressPcikerView alloc] initWithTitle:title DefaultSelected:defaultSelectedArr FileName:nil IsAutoSelect:isAutoSelect Manager:nil ResultBlock:resultBlock];
+    CGXAddressPcikerView *addressPickerView = [[CGXAddressPcikerView alloc] initWithTitle:title DefaultSelected:defaultSelectedArr FileName:nil IsAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
     [addressPickerView showWithAnimation:YES];
 }
 + (void)showAddressPickerWithTitle:(NSString *)title
@@ -55,7 +55,7 @@
                            Manager:(CGXPickerViewManager *)manager
                        ResultBlock:(CGXAddressResultBlock)resultBlock
 {
-    CGXAddressPcikerView *addressPickerView = [[CGXAddressPcikerView alloc] initWithTitle:title DefaultSelected:defaultSelectedArr FileName:fileName IsAutoSelect:isAutoSelect Manager:nil ResultBlock:resultBlock];
+    CGXAddressPcikerView *addressPickerView = [[CGXAddressPcikerView alloc] initWithTitle:title DefaultSelected:defaultSelectedArr FileName:fileName IsAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
     [addressPickerView showWithAnimation:YES];
 }
 #pragma mark - 初始化地址选择器

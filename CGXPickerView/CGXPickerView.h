@@ -101,6 +101,7 @@ typedef NS_ENUM(NSInteger, CGXStringPickerViewStyle) {
                        DataSource:(NSArray *)dataSource
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock;
 
 /**
@@ -117,6 +118,7 @@ typedef NS_ENUM(NSInteger, CGXStringPickerViewStyle) {
                         FileName:(NSString *)fileName
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock;
 /**
 // *  显示自定义字符串选择器   默认常规设置常规个人信息选项  单行
@@ -129,6 +131,7 @@ typedef NS_ENUM(NSInteger, CGXStringPickerViewStyle) {
 + (void)showStringPickerWithTitle:(NSString *)title
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(CGXStringPickerViewStyle)style;
 //***

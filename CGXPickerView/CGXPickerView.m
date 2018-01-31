@@ -18,9 +18,15 @@
                          FileName:(NSString *)fileName
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                         Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
 {
-    [CGXStringPickerView showStringPickerWithTitle:title FileName:fileName DefaultSelValue:defaultSelValue IsAutoSelect:isAutoSelect ResultBlock:^(id selectValue, id selectRow) {
+    [CGXStringPickerView showStringPickerWithTitle:title
+                                          FileName:fileName
+                                   DefaultSelValue:defaultSelValue
+                                      IsAutoSelect:isAutoSelect
+                                           Manager:(CGXPickerViewManager *)manager
+                                       ResultBlock:^(id selectValue, id selectRow) {
         if (resultBlock) {
             resultBlock(selectValue,selectRow);
         } ;
@@ -33,12 +39,14 @@
                        DataSource:(NSArray *)dataSource
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
 {
     [CGXStringPickerView showStringPickerWithTitle:title
                                         DataSource:dataSource
                                    DefaultSelValue:defaultSelValue
                                       IsAutoSelect:isAutoSelect
+                                           Manager:(CGXPickerViewManager *)manager
                                        ResultBlock:^(id selectValue, id selectRow) {
                                            if (resultBlock) {
                                                resultBlock(selectValue,selectRow);
@@ -49,12 +57,14 @@
 + (void)showStringPickerWithTitle:(NSString *)title
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                         Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(CGXStringPickerViewStyle)style
 {
     [CGXStringPickerView showStringPickerWithTitle:title
                                    DefaultSelValue:defaultSelValue
                                       IsAutoSelect:isAutoSelect
+                                           Manager:(CGXPickerViewManager *)manager
                                        ResultBlock:^(id selectValue, id selectRow) {
                                            if (resultBlock) {
                                                resultBlock(selectValue,selectRow);

@@ -35,18 +35,20 @@
                        DataSource:(NSArray *)dataSource
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
 {
     if (dataSource == nil || dataSource.count == 0) {
         return;
     }
-    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
+    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title DataSource:dataSource DefaultSelValue:defaultSelValue IisAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
      [strPickerView showWithAnimation:YES];
 }
 + (void)showStringPickerWithTitle:(NSString *)title
                          FileName:(NSString *)fileName
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
  {
     if (fileName == nil || fileName.length == 0) {
@@ -54,18 +56,19 @@
     }
     NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
     NSArray *dataSource =[[NSArray alloc] initWithContentsOfFile:path];
-     CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
+    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title DataSource:dataSource DefaultSelValue:defaultSelValue IisAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
      [strPickerView showWithAnimation:YES];
 }
 + (void)showStringPickerWithTitle:(NSString *)title
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(NSInteger)style
 {
     NSArray *dataSource = [CGXStringPickerView showStringPickerDataSourceStyle:style];
     
-    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title dataSource:dataSource defaultSelValue:defaultSelValue isAutoSelect:isAutoSelect resultBlock:resultBlock];
+   CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title DataSource:dataSource DefaultSelValue:defaultSelValue IisAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
     [strPickerView showWithAnimation:YES];
 }
 
@@ -198,10 +201,11 @@
 
 #pragma mark - 初始化自定义字符串选择器
 - (instancetype)initWithTitle:(NSString *)title
-                   dataSource:(NSArray *)dataSource
-              defaultSelValue:(id)defaultSelValue
-                 isAutoSelect:(BOOL)isAutoSelect
-                  resultBlock:(CGXStringResultBlock)resultBlock
+                   DataSource:(NSArray *)dataSource
+              DefaultSelValue:(id)defaultSelValue
+                 IisAutoSelect:(BOOL)isAutoSelect
+                     Manager:(CGXPickerViewManager *)manager
+                  ResultBlock:(CGXStringResultBlock)resultBlock
 {
     if (self = [super init]) {
         self.title = title;

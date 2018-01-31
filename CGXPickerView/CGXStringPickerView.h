@@ -29,6 +29,7 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
                        DataSource:(NSArray *)dataSource
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock;
 /**
  *  显示自定义字符串选择器
@@ -44,6 +45,7 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
                         FileName:(NSString *)fileName
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock;
 /**
 // *  显示自定义字符串选择器   常规个人信息选项
@@ -58,6 +60,7 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
 + (void)showStringPickerWithTitle:(NSString *)title
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(NSInteger)style;
 

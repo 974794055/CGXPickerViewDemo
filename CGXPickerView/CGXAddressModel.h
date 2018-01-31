@@ -12,8 +12,6 @@
 
 @end
 
-
-
 @class CGXProvinceModel, CGXCityModel, CGXTownModel;
 
 @interface CGXProvinceModel : NSObject

@@ -14,18 +14,6 @@
 
 @implementation CGXProvinceModel
 
-//+ (NSDictionary *)modelCustomPropertyMapper {
-//    return @{
-//             @"name": @"v",
-//             @"city": @"n"
-//             };
-//}
-//
-//+ (NSDictionary *)modelContainerPropertyGenericClass {
-//    return @{
-//             @"city": [CGXCityModel class]
-//             };
-//}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     
@@ -35,18 +23,6 @@
 
 @implementation CGXCityModel
 
-//+ (NSDictionary *)modelCustomPropertyMapper {
-//    return @{
-//             @"name": @"v",
-//             @"town": @"n"
-//             };
-//}
-//
-//+ (NSDictionary *)modelContainerPropertyGenericClass {
-//    return @{
-//             @"town": [CGXTownModel class]
-//             };
-//}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     
@@ -56,11 +32,6 @@
 
 @implementation CGXTownModel
 
-//+ (NSDictionary *)modelCustomPropertyMapper {
-//    return @{
-//             @"name": @"v"
-//             };
-//}
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
     

@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import "CGXPickerView.h"
 #import "CGXPickerView.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView *tableView;
 
@@ -61,7 +61,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.estimatedRowHeight = 50;
-        _tableView.estimatedSectionFooterHeight = 10;
+        _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
         [self.view addSubview:_tableView];
@@ -135,66 +135,66 @@
         }];
     }
     else if ([title isEqualToString:@"自定义一行"]){
-        [CGXPickerView showStringPickerWithTitle:@"红豆" DataSource:@[@"很好的", @"干干", @"高度", @"打的", @"都怪怪的", @"博对"] DefaultSelValue:@"高度" IsAutoSelect:NO ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"红豆" DataSource:@[@"很好的", @"干干", @"高度", @"打的", @"都怪怪的", @"博对"] DefaultSelValue:@"高度" IsAutoSelect:NO Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue);
             weakSelf.navigationItem.title = selectValue;; ;
         }];
     }
     else if ([title isEqualToString:@"自定义二行"]){
-        NSArray *dataSources = @[@[@"第1周", @"第2周", @"第3周", @"第4周", @"第5周", @"第6周", @"第7周"], @[@"第1天", @"第2天", @"第3天", @"第4天", @"第5天", @"第6天", @"第7天"],@[@"红豆",@"金币"]];
+        NSArray *dataSources = @[@[@"第1周", @"第2周", @"第3周", @"第4周", @"第5周", @"第6周", @"第7周"], @[@"第1天", @"第2天", @"第3天", @"第4天", @"第5天", @"第6天", @"第7天"]];
         NSArray *defaultSelValueArr = @[@"第3周"];
-        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:NO ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:NO Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@，%@", selectValue[0], selectValue[1]];
         }];
     }else if ([title isEqualToString:@"教育"]){
         
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleEducation] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"教育" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"教育" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@--%@",selectValue,selectRow);
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleEducation];
     } else if ([title isEqualToString:@"血型"]){
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleBlood] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"血型" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"血型" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleBlood];
     }   else if ([title isEqualToString:@"星座"]){
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylConstellation] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"星座" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"星座" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylConstellation];
     }   else if ([title isEqualToString:@"生肖"]){
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleAnimal] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"生肖" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"生肖" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleAnimal];
     } else if ([title isEqualToString:@"性别"]){
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleGender] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"性别" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"性别" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleGender];
     }else if ([title isEqualToString:@"民族"]){
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylNation] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"民族" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"民族" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylNation];
     }else if ([title isEqualToString:@"宗教"]){
         
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylReligious] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"宗教" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"宗教" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylReligious];
     }else if ([title isEqualToString:@"身高"]){
         
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylHeight] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"身高" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"身高" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylHeight];
@@ -205,14 +205,14 @@
         NSString *defaultSelValue2 = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylHeightScope] objectAtIndex:6];
         
         
-        [CGXPickerView showStringPickerWithTitle:@"身高范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"身高范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylHeightScope];
     }else if ([title isEqualToString:@"体重"]){
         
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylWeight] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"体重" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"体重" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylWeight];
@@ -222,14 +222,14 @@
         
         NSString *defaultSelValue2 = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylWeightScope] objectAtIndex:6];
         
-        [CGXPickerView showStringPickerWithTitle:@"体重范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"体重范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylWeightScope];
     }else if ([title isEqualToString:@"年龄"]){
         
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleAge] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"年龄" DefaultSelValue:defaultSelValue IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"年龄" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleAge];
@@ -239,14 +239,14 @@
         
         NSString *defaultSelValue2 = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleAgeScope] objectAtIndex:6];
         
-        [CGXPickerView showStringPickerWithTitle:@"年龄范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"年龄范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleAgeScope];
     }else if ([title isEqualToString:@"星期"]){
         
         NSString *defaultSelValue1 = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStylWeek] objectAtIndex:3];
-        [CGXPickerView showStringPickerWithTitle:@"星期" DefaultSelValue:defaultSelValue1 IsAutoSelect:YES ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"星期" DefaultSelValue:defaultSelValue1 IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStylWeek];
