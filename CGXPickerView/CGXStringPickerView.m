@@ -366,7 +366,7 @@
                 NSString *str = self.selectedItems[i];
                 [selectRowAry addObject:[NSString stringWithFormat:@"%ld" , [arr indexOfObject:str]]];
             }
-                _resultBlock([self.selectedItem copy],[selectRowAry copy]);
+                _resultBlock([self.selectedItems copy],[selectRowAry copy]);
         }
     }
 }
@@ -443,7 +443,7 @@
                     NSString *str = self.selectedItems[i];
                     [selectRowAry addObject:[NSString stringWithFormat:@"%ld" , [arr indexOfObject:str]]];
                 }
-                _resultBlock([self.selectedItem copy],[selectRowAry copy]);
+                _resultBlock([self.selectedItems copy],[selectRowAry copy]);
             }
         }
     }

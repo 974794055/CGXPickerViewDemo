@@ -101,6 +101,11 @@
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
         arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
     }
+    
+    NSString *sss =[[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bondle"];
+    
+    NSMutableArray *aaa = [NSMutableArray arrayWithContentsOfFile:[sss stringByAppendingString:@"CGXAddressCity.plist"]];
+   NSLog(@"哈哈。%@" ,aaa);
     for (NSDictionary *dict in arrData) {
         NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
         [dic1 setObject:[dict objectForKey:@"v"] forKey:@"name"];

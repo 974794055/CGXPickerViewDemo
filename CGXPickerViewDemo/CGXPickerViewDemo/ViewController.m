@@ -143,7 +143,7 @@
     else if ([title isEqualToString:@"自定义二行"]){
         NSArray *dataSources = @[@[@"第1周", @"第2周", @"第3周", @"第4周", @"第5周", @"第6周", @"第7周"], @[@"第1天", @"第2天", @"第3天", @"第4天", @"第5天", @"第6天", @"第7天"]];
         NSArray *defaultSelValueArr = @[@"第3周"];
-        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:NO Manager:nil ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@，%@", selectValue[0], selectValue[1]];
         }];
