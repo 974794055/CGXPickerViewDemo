@@ -21,7 +21,6 @@
 		D36E9EB62021C642000A08A8 /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAA2021C642000A08A8 /* CGXPickerViewManager.m */; };
 		D36E9EB72021C642000A08A8 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */; };
 		D36E9EB82021C642000A08A8 /* NSDate+CGXPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */; };
-		D3E7C40E2029A6C800C8AB44 /* CGXPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3E7C40D2029A6C800C8AB44 /* CGXPickerView.bundle */; };
 		D3EB3C3020289C9A00A0AC02 /* CGXAddressCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */; };
 		D3EB3C3120289C9A00A0AC02 /* CGXBasicInfoPicker.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 		D36E9EAD2021C642000A08A8 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
 		D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGXPicker.m"; sourceTree = "<group>"; };
-		D3E7C40D2029A6C800C8AB44 /* CGXPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerView.bundle; sourceTree = "<group>"; };
 		D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXAddressCity.plist; sourceTree = "<group>"; };
 		D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXBasicInfoPicker.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +103,6 @@
 		D36E9E9C2021C642000A08A8 /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				D3E7C40D2029A6C800C8AB44 /* CGXPickerView.bundle */,
 				D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */,
 				D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */,
 				D36E9E9E2021C642000A08A8 /* CGXAddressModel.h */,
@@ -192,7 +189,6 @@
 				D36E9E902021C630000A08A8 /* Assets.xcassets in Resources */,
 				D3EB3C3020289C9A00A0AC02 /* CGXAddressCity.plist in Resources */,
 				D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */,
-				D3E7C40E2029A6C800C8AB44 /* CGXPickerView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
