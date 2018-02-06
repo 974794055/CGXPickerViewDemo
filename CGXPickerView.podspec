@@ -10,6 +10,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/974794055/CGXPickerViewDemo.git", :tag =>        s.version }         #存储库的git地址，以及tag值
   s.source_files  =  "CGXPickerView/**/*" #需要托管的源代码路径
   s.requires_arc = true #是否支持ARC
-  s.resource = CGXPickerView/CGXPickerView.bundle"
 end
 
