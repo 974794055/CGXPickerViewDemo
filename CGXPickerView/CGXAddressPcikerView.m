@@ -92,7 +92,7 @@
             NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
             arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
         } else if ([self.fileName hasSuffix:@".json"]){
-            NSString *fileName = [self.fileName stringByReplacingOccurrencesOfString:@".plist" withString:@""];
+            NSString *fileName = [self.fileName stringByReplacingOccurrencesOfString:@".json" withString:@""];
             NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
             NSData *JSONData = [NSData dataWithContentsOfFile:filePath];
             arrData = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
