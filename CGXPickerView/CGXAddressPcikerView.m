@@ -255,6 +255,9 @@
 
 #pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    if (self.addressModelArr.count==0) {
+        return 0;
+    }
     return self.defaultSelectedArr.count;
 }
 
