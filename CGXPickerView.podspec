@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CGXPickerView"    #存储库名称
-  s.version      = "1.0.5"      #版本号，与tag值一致
+  s.version      = "1.0.6"      #版本号，与tag值一致
   s.summary      = "a CGXPickerView demo标签封装"  #简介
   s.description  = "a CGXPickerView标签封装"  #描述
   s.homepage     = "https://github.com/974794055/CGXPickerViewDemo"      #项目主页，不是git地址
@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/974794055/CGXPickerViewDemo.git", :tag =>        s.version }         #存储库的git地址，以及tag值
   s.source_files  =  "CGXPickerView/**/*" #需要托管的源代码路径
   s.requires_arc = true #是否支持ARC
-  s.resource = "Resources/CGXPickerView.bundle"
+  s.resource = CGXPickerView/CGXPickerView.bundle"
 end
 
