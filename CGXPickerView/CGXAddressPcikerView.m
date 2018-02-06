@@ -98,8 +98,12 @@
             arrData = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         }
     } else{
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
-        arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
+//        arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
+        
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"json"];
+        NSData *JSONData = [NSData dataWithContentsOfFile:filePath];
+        arrData = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
     }
     for (NSDictionary *dict in arrData) {
         NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];

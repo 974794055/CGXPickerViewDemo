@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3571EF02029E4A000DD06ED /* CGXAddressCity.json in Resources */ = {isa = PBXBuildFile; fileRef = D3571EEF2029E4A000DD06ED /* CGXAddressCity.json */; };
+		D3571EF22029E5B900DD06ED /* CGXBasicInfoPicker.json in Resources */ = {isa = PBXBuildFile; fileRef = D3571EF12029E5B800DD06ED /* CGXBasicInfoPicker.json */; };
 		D36E9E882021C630000A08A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9E872021C630000A08A8 /* AppDelegate.m */; };
 		D36E9E8B2021C630000A08A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9E8A2021C630000A08A8 /* ViewController.m */; };
 		D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36E9E8C2021C630000A08A8 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D3571EEF2029E4A000DD06ED /* CGXAddressCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CGXAddressCity.json; sourceTree = "<group>"; };
+		D3571EF12029E5B800DD06ED /* CGXBasicInfoPicker.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CGXBasicInfoPicker.json; sourceTree = "<group>"; };
 		D36E9E832021C630000A08A8 /* CGXPickerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGXPickerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36E9E862021C630000A08A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D36E9E872021C630000A08A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 		D36E9E9C2021C642000A08A8 /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
+				D3571EEF2029E4A000DD06ED /* CGXAddressCity.json */,
+				D3571EF12029E5B800DD06ED /* CGXBasicInfoPicker.json */,
 				D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */,
 				D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */,
 				D36E9E9E2021C642000A08A8 /* CGXAddressModel.h */,
@@ -184,9 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3571EF02029E4A000DD06ED /* CGXAddressCity.json in Resources */,
 				D3EB3C3120289C9A00A0AC02 /* CGXBasicInfoPicker.plist in Resources */,
 				D36E9E932021C630000A08A8 /* LaunchScreen.storyboard in Resources */,
 				D36E9E902021C630000A08A8 /* Assets.xcassets in Resources */,
+				D3571EF22029E5B900DD06ED /* CGXBasicInfoPicker.json in Resources */,
 				D3EB3C3020289C9A00A0AC02 /* CGXAddressCity.plist in Resources */,
 				D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */,
 			);
