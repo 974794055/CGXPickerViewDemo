@@ -139,4 +139,6 @@ typedef NS_ENUM(NSInteger, CGXStringPickerViewStyle) {
 //***
 
 + (NSArray *)showStringPickerDataSourceStyle:(CGXStringPickerViewStyle)style;
+
++ (NSString *)showSelectAddressProvince_id:(NSString *)province_id City_id:(NSString *)city_id;
 @end

@@ -160,5 +160,26 @@
     }];
 }
 
++ (NSString *)showSelectAddressProvince_id:(NSString *)province_id City_id:(NSString *)city_id
+{
+    NSString *mulStr = @"不限";
+    NSMutableArray *arrData = [NSMutableArray array];
+    NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
+    NSString *filePath = [[NSBundle bundleWithPath:strResourcesBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
+    arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
+    NSInteger inter1= [province_id integerValue];
+    NSInteger inter2= [city_id integerValue];
+    if (![province_id isEqualToString:@"0"]) {
+        NSDictionary *dict1 = arrData[inter1];
+        mulStr =[dict1 objectForKey:@"v"];
+        NSArray *arr = [dict1 objectForKey:@"n"];
+        if (![city_id isEqualToString:@"0"]) {
+            NSDictionary *dict2 = arr[inter2];
+            mulStr = [NSString stringWithFormat:@"%@-%@",mulStr,[dict2 objectForKey:@"v"]];
+        }
+    }
+    return mulStr;
+    
+}
 
 @end
