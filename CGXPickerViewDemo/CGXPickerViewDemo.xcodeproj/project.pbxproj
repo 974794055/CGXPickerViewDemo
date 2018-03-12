@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D313D0D82056BAFE00CD9243 /* CGXPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D313D0D72056BAFE00CD9243 /* CGXPickerView.bundle */; };
 		D36E9E882021C630000A08A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9E872021C630000A08A8 /* AppDelegate.m */; };
 		D36E9E8B2021C630000A08A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9E8A2021C630000A08A8 /* ViewController.m */; };
 		D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36E9E8C2021C630000A08A8 /* Main.storyboard */; };
@@ -21,11 +22,10 @@
 		D36E9EB62021C642000A08A8 /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAA2021C642000A08A8 /* CGXPickerViewManager.m */; };
 		D36E9EB72021C642000A08A8 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */; };
 		D36E9EB82021C642000A08A8 /* NSDate+CGXPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */; };
-		D3EB3C3020289C9A00A0AC02 /* CGXAddressCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */; };
-		D3EB3C3120289C9A00A0AC02 /* CGXBasicInfoPicker.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D313D0D72056BAFE00CD9243 /* CGXPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerView.bundle; sourceTree = "<group>"; };
 		D36E9E832021C630000A08A8 /* CGXPickerViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGXPickerViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36E9E862021C630000A08A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D36E9E872021C630000A08A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,8 +52,6 @@
 		D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 		D36E9EAD2021C642000A08A8 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
 		D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGXPicker.m"; sourceTree = "<group>"; };
-		D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXAddressCity.plist; sourceTree = "<group>"; };
-		D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXBasicInfoPicker.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +101,7 @@
 		D36E9E9C2021C642000A08A8 /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				D3EB3C2E20289C9A00A0AC02 /* CGXAddressCity.plist */,
-				D3EB3C2F20289C9A00A0AC02 /* CGXBasicInfoPicker.plist */,
+				D313D0D72056BAFE00CD9243 /* CGXPickerView.bundle */,
 				D36E9E9E2021C642000A08A8 /* CGXAddressModel.h */,
 				D36E9E9F2021C642000A08A8 /* CGXAddressModel.m */,
 				D36E9EA02021C642000A08A8 /* CGXAddressPcikerView.h */,
@@ -184,11 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3EB3C3120289C9A00A0AC02 /* CGXBasicInfoPicker.plist in Resources */,
 				D36E9E932021C630000A08A8 /* LaunchScreen.storyboard in Resources */,
 				D36E9E902021C630000A08A8 /* Assets.xcassets in Resources */,
-				D3EB3C3020289C9A00A0AC02 /* CGXAddressCity.plist in Resources */,
 				D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */,
+				D313D0D82056BAFE00CD9243 /* CGXPickerView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

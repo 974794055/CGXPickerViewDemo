@@ -98,8 +98,18 @@
             arrData = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         }
     } else{
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
+        
+        NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
+
+    
+        NSString *filePath = [[NSBundle bundleWithPath:strResourcesBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
         arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
+        
+//        UIImage *imgC = [UIImage imageWithContentsOfFile:strC];
+//        [_imageCustomBundle setImage:imgC];
+        
+//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
+//        arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
     }
     for (NSDictionary *dict in arrData) {
         NSMutableDictionary *dic1 = [NSMutableDictionary dictionary];
