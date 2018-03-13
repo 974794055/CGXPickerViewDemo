@@ -252,8 +252,6 @@
         } Style:CGXStringPickerViewStylWeek];
     }
     
-    
-    
 }
 
 
