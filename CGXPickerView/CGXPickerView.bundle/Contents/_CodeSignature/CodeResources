@@ -3,9 +3,41 @@
 <plist version="1.0">
 <dict>
 	<key>files</key>
-	<dict/>
+	<dict>
+		<key>Resources/CGXAddressCity.plist</key>
+		<data>
+		idWwp43kN7zWhrLCilOI5NkF8Uo=
+		</data>
+		<key>Resources/CGXBasicInfoPicker.plist</key>
+		<data>
+		aYVAk7Qdx/uBbh1/PKLsB886SzA=
+		</data>
+	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>Resources/CGXAddressCity.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			idWwp43kN7zWhrLCilOI5NkF8Uo=
+			</data>
+			<key>hash2</key>
+			<data>
+			7jQ3C4batz3P9BklRIpKWTblD3RzHL+1Yqp/SkjidhY=
+			</data>
+		</dict>
+		<key>Resources/CGXBasicInfoPicker.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			aYVAk7Qdx/uBbh1/PKLsB886SzA=
+			</data>
+			<key>hash2</key>
+			<data>
+			apkPybB/GdY0OsLdT+ecFTLQ2roiyzxO1bZ75QdQ89M=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^Resources/</key>

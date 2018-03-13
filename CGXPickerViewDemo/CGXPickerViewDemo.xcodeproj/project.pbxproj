@@ -21,7 +21,7 @@
 		D36E9EB62021C642000A08A8 /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAA2021C642000A08A8 /* CGXPickerViewManager.m */; };
 		D36E9EB72021C642000A08A8 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */; };
 		D36E9EB82021C642000A08A8 /* NSDate+CGXPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */; };
-		D3D0980920578B5B00BCD4F8 /* CGXPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3D0980820578B5B00BCD4F8 /* CGXPickerView.bundle */; };
+		D3D0980F2057931800BCD4F8 /* CGXPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3D0980E2057931800BCD4F8 /* CGXPickerView.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		D36E9EAC2021C642000A08A8 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 		D36E9EAD2021C642000A08A8 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
 		D36E9EAE2021C642000A08A8 /* NSDate+CGXPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGXPicker.m"; sourceTree = "<group>"; };
-		D3D0980820578B5B00BCD4F8 /* CGXPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerView.bundle; sourceTree = "<group>"; };
+		D3D0980E2057931800BCD4F8 /* CGXPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerView.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 		D36E9E9C2021C642000A08A8 /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				D3D0980820578B5B00BCD4F8 /* CGXPickerView.bundle */,
+				D3D0980E2057931800BCD4F8 /* CGXPickerView.bundle */,
 				D36E9E9E2021C642000A08A8 /* CGXAddressModel.h */,
 				D36E9E9F2021C642000A08A8 /* CGXAddressModel.m */,
 				D36E9EA02021C642000A08A8 /* CGXAddressPcikerView.h */,
@@ -184,7 +184,7 @@
 				D36E9E932021C630000A08A8 /* LaunchScreen.storyboard in Resources */,
 				D36E9E902021C630000A08A8 /* Assets.xcassets in Resources */,
 				D36E9E8E2021C630000A08A8 /* Main.storyboard in Resources */,
-				D3D0980920578B5B00BCD4F8 /* CGXPickerView.bundle in Resources */,
+				D3D0980F2057931800BCD4F8 /* CGXPickerView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
