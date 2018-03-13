@@ -74,8 +74,9 @@
 
 + (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CGXBasicInfoPicker" ofType:@"plist"];
-    NSMutableDictionary *dataSourceaa =[[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
+    NSString *filePath = [[NSBundle bundleWithPath:strResourcesBundle] pathForResource:@"CGXBasicInfoPicker" ofType:@"plist"];
+    NSMutableDictionary *dataSourceaa =[[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     NSArray *dataSource = [NSArray array];
     
     switch (style) {
