@@ -83,7 +83,7 @@
     return self;
 }
 
-#pragma mark - 获取地址数据
+#pragma mark - 获地址数据
 - (void)loadData {
     NSMutableArray *arrData = [NSMutableArray array];
     if (self.fileName) {
