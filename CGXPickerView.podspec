@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CGXPickerView"    #存储库名称
-  s.version      = "2.0.8"      #版本号，与tag值一致
+  s.version      = "2.0.9"      #版本号，与tag值一致
   s.summary      = "a CGXPickerView demo标签封装"  #简介
   s.description  = "a CGXPickerView标签封装"  #描述
   s.homepage     = "https://github.com/974794055/CGXPickerViewDemo"      #项目主页，不是git地址
