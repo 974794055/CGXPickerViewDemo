@@ -47,7 +47,7 @@ typedef void(^CGXAddressResultBlock)(NSArray *selectAddressArr,NSArray *selectAd
                     @"v":@"呜呜"}]
                ]
           ]
-*   @param fileName                 自定义多级选择器文件名称
+*   @param fileName                 自定义多级选择器文件名称    代码plist文件需要穿xxx.plist--plist
  */
 + (void)showAddressPickerWithTitle:(NSString *)title
                    DefaultSelected:(NSArray *)defaultSelectedArr

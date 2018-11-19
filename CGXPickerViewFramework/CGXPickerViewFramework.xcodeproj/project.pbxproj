@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B5689DA821421A39008664E3 /* CGXPickerViewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = B5689DA621421A39008664E3 /* CGXPickerViewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B5689DB021421B6E008664E3 /* CGXBasicInfoPicker.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5689DAE21421B6E008664E3 /* CGXBasicInfoPicker.plist */; };
-		B5689DB121421B6E008664E3 /* CGXAddressCity.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5689DAF21421B6E008664E3 /* CGXAddressCity.plist */; };
+		B5689DB821428F8F008664E3 /* CGXPickerViewFileTools.h in Headers */ = {isa = PBXBuildFile; fileRef = B5689DB621428F8F008664E3 /* CGXPickerViewFileTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5689DB921428F8F008664E3 /* CGXPickerViewFileTools.m in Sources */ = {isa = PBXBuildFile; fileRef = B5689DB721428F8F008664E3 /* CGXPickerViewFileTools.m */; };
+		B5689DBA21428FBB008664E3 /* CGXPickerViewFileTools.m in Headers */ = {isa = PBXBuildFile; fileRef = B5689DB721428F8F008664E3 /* CGXPickerViewFileTools.m */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B5689DA321421A39008664E3 /* CGXPickerViewFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CGXPickerViewFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5689DA621421A39008664E3 /* CGXPickerViewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGXPickerViewFramework.h; sourceTree = "<group>"; };
 		B5689DA721421A39008664E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5689DAE21421B6E008664E3 /* CGXBasicInfoPicker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXBasicInfoPicker.plist; sourceTree = "<group>"; };
-		B5689DAF21421B6E008664E3 /* CGXAddressCity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CGXAddressCity.plist; sourceTree = "<group>"; };
+		B5689DB621428F8F008664E3 /* CGXPickerViewFileTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGXPickerViewFileTools.h; sourceTree = "<group>"; };
+		B5689DB721428F8F008664E3 /* CGXPickerViewFileTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGXPickerViewFileTools.m; sourceTree = "<group>"; };
+		B5689DBF214290FB008664E3 /* CGXBasicInfoPicker.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CGXBasicInfoPicker.plist; sourceTree = "<group>"; };
+		B5689DC0214290FC008664E3 /* CGXAddressCity.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CGXAddressCity.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				B5689DA621421A39008664E3 /* CGXPickerViewFramework.h */,
-				B5689DAF21421B6E008664E3 /* CGXAddressCity.plist */,
-				B5689DAE21421B6E008664E3 /* CGXBasicInfoPicker.plist */,
+				B5689DB621428F8F008664E3 /* CGXPickerViewFileTools.h */,
+				B5689DB721428F8F008664E3 /* CGXPickerViewFileTools.m */,
+				B5689DC0214290FC008664E3 /* CGXAddressCity.plist */,
+				B5689DBF214290FB008664E3 /* CGXBasicInfoPicker.plist */,
 				B5689DA721421A39008664E3 /* Info.plist */,
 			);
 			path = CGXPickerViewFramework;
@@ -66,6 +71,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5689DA821421A39008664E3 /* CGXPickerViewFramework.h in Headers */,
+				B5689DB821428F8F008664E3 /* CGXPickerViewFileTools.h in Headers */,
+				B5689DBA21428FBB008664E3 /* CGXPickerViewFileTools.m in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +133,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5689DB021421B6E008664E3 /* CGXBasicInfoPicker.plist in Resources */,
-				B5689DB121421B6E008664E3 /* CGXAddressCity.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5689DB921428F8F008664E3 /* CGXPickerViewFileTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

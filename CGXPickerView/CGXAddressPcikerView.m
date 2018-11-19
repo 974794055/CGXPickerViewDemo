@@ -82,7 +82,15 @@
     }
     return self;
 }
-
+-(NSString *)dataFilePath:(NSString *)nemeString{
+    // 获取应用程序沙盒的Documents目录
+    NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    // 也可以这样添加后缀，plistName是文件名
+    NSString *plistName = [[NSString stringWithFormat:@"%@", nemeString] stringByAppendingPathExtension:@"plist"];
+    // 得到完整的文件路径
+    NSString *plistPath = [documentPath stringByAppendingPathComponent:plistName];
+    return plistPath;
+}
 #pragma mark - 获地址数据
 - (void)loadData {
     NSMutableArray *arrData = [NSMutableArray array];
@@ -96,6 +104,10 @@
             NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
             NSData *JSONData = [NSData dataWithContentsOfFile:filePath];
             arrData = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
+        }
+        if ([self.fileName hasSuffix:@"--plist"]) {
+            NSString  *str = [self.fileName stringByReplacingOccurrencesOfString:@".plist--plist" withString:@""];
+            arrData = [NSMutableArray arrayWithContentsOfFile:[self dataFilePath:str]];
         }
     } else{
         NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
