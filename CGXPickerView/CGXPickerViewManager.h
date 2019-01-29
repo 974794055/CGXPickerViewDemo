@@ -23,7 +23,7 @@
 @property (nonatomic , strong) UIColor *titleLabelColor;//中间标题颜色
 @property (nonatomic , strong) UIColor *titleLabelBGColor;//中间标题背景颜色
 @property (nonatomic , assign) CGFloat titleSize;//字体大小
-
+@property (nonatomic , assign) CGFloat rowHeight; //单元格高度 默认50
 
 @property (nonatomic , strong) UIColor *rightBtnTitleColor;//右侧标题颜色
 @property (nonatomic , strong) UIColor *rightBtnBGColor;//右侧标题背景颜色

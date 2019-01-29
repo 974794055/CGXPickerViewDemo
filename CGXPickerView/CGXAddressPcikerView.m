@@ -328,7 +328,7 @@
 
     if (!pickerLabel)
     {
-        pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - 30) / 3, 40)];
+        pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - 30) / 3, self.manager.rowHeight)];
         pickerLabel.adjustsFontSizeToFitWidth = YES;
         pickerLabel.textAlignment = NSTextAlignmentCenter;
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
@@ -339,6 +339,11 @@
     pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];//调用上一个委托方法，获得要展示的title
     return pickerLabel;
     
+}
+//设置单元格的高
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return self.manager.rowHeight;
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) {
