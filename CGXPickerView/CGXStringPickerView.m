@@ -462,7 +462,13 @@
     UILabel* pickerLabel = (UILabel*)view;
     if (!pickerLabel)
     {
-        pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - 30) / 3, 40)];
+        float width = SCREEN_WIDTH;
+        if (self.isSingleColumn) {
+            width = SCREEN_WIDTH;
+        } else {
+            width = SCREEN_WIDTH / 3.0;
+        }
+        pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, self.manager.rowHeight)];
         pickerLabel.adjustsFontSizeToFitWidth = YES;
         pickerLabel.textAlignment = NSTextAlignmentCenter;
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
@@ -471,6 +477,21 @@
     }
     pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];//调用上一个委托方法，获得要展示的title
     return pickerLabel;
+}
+// 设置分组的宽
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
+{
+    if (self.isSingleColumn) {
+        return SCREEN_WIDTH;
+    } else {
+        float width = SCREEN_WIDTH / 3.0;
+        return width;
+    }
+}
+//设置单元格的高
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component
+{
+    return self.manager.rowHeight;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

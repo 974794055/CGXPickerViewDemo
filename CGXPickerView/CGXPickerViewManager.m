@@ -30,7 +30,7 @@
         _titleLabelColor = CGXPickerRGBColor(252, 96, 134, 1);
         _titleSize = 16;
         _titleLabelBGColor = [UIColor whiteColor];
-        
+        _rowHeight = 50;
         _rightBtnTitle = @"确定";
         _rightBtnBGColor =  CGXPickerRGBColor(252, 96, 134, 1);
         _rightBtnTitleSize = 16;
