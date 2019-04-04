@@ -65,9 +65,10 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
                             Style:(NSInteger)style;
 
 //***
-//返回默认单行个人信息数组
+//返回默认单行个人信息数组  如果使用了自定义 CGXPickerViewManager 属性 需要选择第二个
 //***
 //
 + (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style;
++ (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style Manager:(CGXPickerViewManager *)manager;
 
 @end

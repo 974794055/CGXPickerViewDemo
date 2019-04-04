@@ -13,6 +13,8 @@
 @property (nonatomic , strong) UITableView *tableView;
 
 @property (nonatomic , strong) NSMutableArray *dataArray;
+
+@property (nonatomic , strong) CGXPickerViewManager *manager;
 @end
 
 @implementation ViewController
@@ -22,6 +24,9 @@
     // Do any additional setup after loading the view, typically from a nib.
   
     
+    
+    self.manager = [[CGXPickerViewManager alloc] init];
+    self.manager.pickerTitleSelectColor = [UIColor redColor];
     
     [self.tableView reloadData];
 }
@@ -118,10 +123,11 @@
     }else if ([title isEqualToString:@"倒计时"]){
         [CGXPickerView showDatePickerWithTitle:@"倒计时" DateType:UIDatePickerModeCountDownTimer DefaultSelValue:nil MinDateStr:nil MaxDateStr:nil IsAutoSelect:YES Manager:nil ResultBlock:^(NSString *selectValue) {
             NSLog(@"%@",selectValue);
-            weakSelf.navigationItem.title = selectValue;;
+            weakSelf.navigationItem.title = selectValue;
         }];
     }else if ([title isEqualToString:@"省,市,县"]){
-        [CGXPickerView showAddressPickerWithTitle:@"请选择你的城市" DefaultSelected:@[@4, @0,@0] IsAutoSelect:YES Manager:nil ResultBlock:^(NSArray *selectAddressArr, NSArray *selectAddressRow) {
+//        self.manager.isHaveLimit = YES;
+        [CGXPickerView showAddressPickerWithTitle:@"请选择你的城市" DefaultSelected:@[@4, @0,@0] IsAutoSelect:YES Manager:self.manager ResultBlock:^(NSArray *selectAddressArr, NSArray *selectAddressRow) {
             NSLog(@"%@-%@",selectAddressArr,selectAddressRow);
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@%@%@", selectAddressArr[0], selectAddressArr[1],selectAddressArr[2]];;;;
         }];
@@ -137,7 +143,7 @@
         }];
     }
     else if ([title isEqualToString:@"自定义一行"]){
-        [CGXPickerView showStringPickerWithTitle:@"红豆" DataSource:@[@"很好的", @"干干", @"高度", @"打的", @"都怪怪的", @"博对"] DefaultSelValue:@"高度" IsAutoSelect:NO Manager:nil ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"红豆" DataSource:@[@"很好的", @"干干", @"高度", @"打的", @"都怪怪的", @"博对"] DefaultSelValue:@"高度" IsAutoSelect:NO Manager:self.manager ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue);
             weakSelf.navigationItem.title = selectValue;; ;
         }];
@@ -145,14 +151,15 @@
     else if ([title isEqualToString:@"自定义二行"]){
         NSArray *dataSources = @[@[@"第1周", @"第2周", @"第3周", @"第4周", @"第5周", @"第6周", @"第7周"], @[@"第1天", @"第2天", @"第3天", @"第4天", @"第5天", @"第6天", @"第7天"]];
         NSArray *defaultSelValueArr = @[@"第3周"];
-        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
+        [CGXPickerView showStringPickerWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IsAutoSelect:YES Manager:self.manager ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@，%@", selectValue[0], selectValue[1]];
         }];
     }else if ([title isEqualToString:@"教育"]){
         
-        NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleEducation] objectAtIndex:1];
-        [CGXPickerView showStringPickerWithTitle:@"教育" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
+//        self.manager.isHaveLimit = YES;
+        NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleEducation Manager:self.manager] objectAtIndex:1];
+        [CGXPickerView showStringPickerWithTitle:@"教育" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:self.manager ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@--%@",selectValue,selectRow);
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
         } Style:CGXStringPickerViewStyleEducation];

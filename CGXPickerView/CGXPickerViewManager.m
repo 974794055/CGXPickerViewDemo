@@ -25,6 +25,10 @@
         _kTopViewH = 50;
         _pickerTitleSize  =15;
         _pickerTitleColor = [UIColor blackColor];
+        
+        _pickerTitleSelectSize  =15;
+        _pickerTitleSelectColor = [UIColor blackColor];
+        
         _lineViewColor =CGXPickerRGBColor(225, 225, 225, 1);
         
         _titleLabelColor = CGXPickerRGBColor(252, 96, 134, 1);
@@ -48,6 +52,7 @@
         _leftBtnborderColor = CGXPickerRGBColor(252, 96, 134, 1);
         _leftBtnCornerRadius = 6;
         _leftBtnBorderWidth = 1;
+        _isHaveLimit = NO;
         
     }
     return self;

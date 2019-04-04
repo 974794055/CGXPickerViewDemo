@@ -73,6 +73,10 @@
 }
 + (NSArray *)showStringPickerDataSourceStyle:(CGXStringPickerViewStyle)style
 {
+    return [self showStringPickerDataSourceStyle:style Manager:nil];
+}
++ (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style Manager:(CGXPickerViewManager *)manager
+{
     NSArray *dataSource =[NSArray array];
     
     if (style == CGXStringPickerViewStyleEducation ||
@@ -86,11 +90,11 @@
         style == CGXStringPickerViewStylHeight ||
         style == CGXStringPickerViewStylWeight ||
         style == CGXStringPickerViewStylWeek) {
-        dataSource  =[CGXStringPickerView showStringPickerDataSourceStyle:style];
+        dataSource  =[CGXStringPickerView showStringPickerDataSourceStyle:style Manager:manager];
     } else if (style == CGXStringPickerViewStyleAgeScope ||
                style == CGXStringPickerViewStylHeightScope ||
                style ==CGXStringPickerViewStylWeightScope){
-        dataSource  =[[CGXStringPickerView showStringPickerDataSourceStyle:style] firstObject];
+        dataSource  =[[CGXStringPickerView showStringPickerDataSourceStyle:style Manager:manager] firstObject];
     }
     
     return dataSource;

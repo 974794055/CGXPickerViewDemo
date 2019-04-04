@@ -66,15 +66,18 @@
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(NSInteger)style
 {
-    NSArray *dataSource = [CGXStringPickerView showStringPickerDataSourceStyle:style];
+    NSArray *dataSource = [CGXStringPickerView showStringPickerDataSourceStyle:style Manager:manager];
     
    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:title DataSource:dataSource DefaultSelValue:defaultSelValue IisAutoSelect:isAutoSelect Manager:manager ResultBlock:resultBlock];
     [strPickerView showWithAnimation:YES];
 }
-
 + (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style
 {
-    NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
+    return [self showStringPickerDataSourceStyle:style Manager:nil];
+}
++ (NSArray *)showStringPickerDataSourceStyle:(NSInteger)style Manager:(CGXPickerViewManager *)manager
+{
+    NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerViewBundle" ofType:@"bundle"];
     NSString *filePath = [[NSBundle bundleWithPath:strResourcesBundle] pathForResource:@"CGXBasicInfoPicker" ofType:@"plist"];
     NSMutableDictionary *dataSourceaa =[[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     NSArray *dataSource = [NSArray array];
@@ -159,8 +162,28 @@
         default:
             break;
     }
+    
+    NSMutableArray *dataArr = [NSMutableArray arrayWithArray:dataSource];
+    
+    if (manager) {
+        if (!manager.isHaveLimit) {
+            [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSString *str = (NSString *)obj;
+                if ([str isEqualToString:@"不限"]) {
+                    [dataArr removeObject:obj];
+                };
+            }];
+        }
+    }else{
+        [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString *str = (NSString *)obj;
+            if ([str isEqualToString:@"不限"]) {
+                [dataArr removeObject:obj];
+            };
+        }];
+    }
 //  NSLog(@"style %ld--%@" , style,dataSourceaa);
-    return dataSource;
+    return dataArr;
 }
 
 //身高范围
@@ -431,6 +454,7 @@
     } else {
         self.selectedItems[component] = ((NSArray *)_dataSource[component])[row];
     }
+     [pickerView reloadAllComponents];
     // 设置是否自动回调
     if (self.isAutoSelect) {
         if(_resultBlock) {
@@ -450,6 +474,7 @@
     }
 }
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
+    NSLog(@"row:%ld--%ld--%@" , row,component,self.selectedItem);
     //设置分割线的颜色
     for(UIView *singleLine in pickerView.subviews)
     {
@@ -475,8 +500,29 @@
         [pickerLabel setFont:[UIFont systemFontOfSize:self.manager.pickerTitleSize]];
         [pickerLabel setTextColor:self.manager.pickerTitleColor];
     }
-    pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];//调用上一个委托方法，获得要展示的title
+//    pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];//调用上一个委托方法，获得要展示的title
+    pickerLabel.attributedText = [self pickerView:pickerView attributedTitleForRow:row forComponent:component];
     return pickerLabel;
+}
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *normalRowString = [self pickerView:pickerView titleForRow:row forComponent:component];
+    NSString *selectRowString = [self pickerView:pickerView titleForRow:[pickerView selectedRowInComponent:component] forComponent:component];
+    
+    NSMutableAttributedString * attriStr = [[NSMutableAttributedString alloc] initWithString:normalRowString];
+    [attriStr addAttribute:NSForegroundColorAttributeName value:self.manager.pickerTitleColor range:NSMakeRange(0, normalRowString.length)];
+    [attriStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:self.manager.pickerTitleSize] range:NSMakeRange(0, normalRowString.length)];
+    
+    NSMutableAttributedString * attriSelStr = [[NSMutableAttributedString alloc] initWithString:selectRowString];
+    [attriSelStr addAttribute:NSForegroundColorAttributeName value:self.manager.pickerTitleSelectColor range:NSMakeRange(0, selectRowString.length)];
+    [attriSelStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:self.manager.pickerTitleSelectSize] range:NSMakeRange(0, selectRowString.length)];
+    
+    
+    if (row == [pickerView selectedRowInComponent:component]) {
+        return attriSelStr;
+    } else {
+        return attriStr;
+    }
 }
 // 设置分组的宽
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component

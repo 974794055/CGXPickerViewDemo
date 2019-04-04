@@ -17,7 +17,7 @@
 @interface CGXProvinceModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSArray *city;
+@property (nonatomic, strong) NSMutableArray *city;
 @property (nonatomic, copy) NSString *code;
 
 @end
@@ -25,7 +25,7 @@
 @interface CGXCityModel : NSObject
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, strong) NSArray *town;
+@property (nonatomic, strong) NSMutableArray *town;
 @property (nonatomic, copy) NSString *code;
 
 @end

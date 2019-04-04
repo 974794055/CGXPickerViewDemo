@@ -110,7 +110,7 @@
             arrData = [NSMutableArray arrayWithContentsOfFile:[self dataFilePath:str]];
         }
     } else{
-        NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerView" ofType:@"bundle"];
+        NSString *strResourcesBundle = [[NSBundle mainBundle] pathForResource:@"CGXPickerViewBundle" ofType:@"bundle"];
         NSString *filePath = [[NSBundle bundleWithPath:strResourcesBundle] pathForResource:@"CGXAddressCity" ofType:@"plist"];
         arrData = [NSMutableArray arrayWithContentsOfFile:filePath];
     }
@@ -132,18 +132,38 @@
                 [dic3 setObject:[dict objectForKey:@"k"] forKey:@"code"];
                 CGXTownModel *model3 = [CGXTownModel new];
                 [model3 setValuesForKeysWithDictionary:dic3];
-                [bbbb addObject:model3];
+                
+                if (self.manager.isHaveLimit) {
+                    [bbbb addObject:model3];
+                } else{
+                    if (![model3.name isEqualToString:@"不限"]) {
+                        [bbbb addObject:model3];
+                    }
+                }
             }
             [dic2 setObject:bbbb forKey:@"town"];
             CGXCityModel *model2 = [CGXCityModel new];
             [model2 setValuesForKeysWithDictionary:dic2];
-            [aaaa addObject:model2];
+            if (self.manager.isHaveLimit) {
+                [aaaa addObject:model2];
+            }else{
+                if (![model2.name isEqualToString:@"不限"]) {
+                    [aaaa addObject:model2];
+                }
+            }
         }
         [dic1 setObject:aaaa forKey:@"city"];
         CGXProvinceModel *model1 = [CGXProvinceModel new];
         [model1 setValuesForKeysWithDictionary:dic1];
-        [self.addressModelArr addObject:model1];
+        if (self.manager.isHaveLimit) {
+            [self.addressModelArr addObject:model1];
+        }else{
+            if (![model1.name isEqualToString:@"不限"]) {
+                [self.addressModelArr addObject:model1];
+            }
+        }
     }
+    
 }
 
 #pragma mark - 初始化子视图
