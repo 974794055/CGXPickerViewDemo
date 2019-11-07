@@ -2,8 +2,8 @@
 //  CGXStringPickerView.m
 //  CGXPickerView
 //
-//  Created by 曹贵鑫 on 2017/8/22.
-//  Copyright © 2017年 曹贵鑫. All rights reserved.
+//  Created by CGX on 2017/8/22.
+//  Copyright © 2017年 CGX. All rights reserved.
 //
 
 #import "CGXStringPickerView.h"
@@ -167,19 +167,51 @@
     
     if (manager) {
         if (!manager.isHaveLimit) {
+//            [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                NSString *str = (NSString *)obj;
+//                if ([str isEqualToString:@"不限"]) {
+//                    [dataArr removeObject:obj];
+//                };
+//            }];
             [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                NSString *str = (NSString *)obj;
-                if ([str isEqualToString:@"不限"]) {
-                    [dataArr removeObject:obj];
-                };
+                if ([obj isKindOfClass:[NSString class]]) {
+                    NSString *str = (NSString *)obj;
+                    if ([str isEqualToString:@"不限"]) {
+                        [dataArr removeObject:obj];
+                    };
+                }
+                if ([obj isKindOfClass:[NSArray class]]) {
+                    NSArray *smallstr = (NSArray *)obj;
+                    [smallstr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if ([obj isKindOfClass:[NSString class]]) {
+                            NSString *str = (NSString *)obj;
+                            if ([str isEqualToString:@"不限"]) {
+                                [dataArr removeObject:obj];
+                            };
+                        }
+                    }];
+                }
             }];
         }
     }else{
         [dataArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSString *str = (NSString *)obj;
-            if ([str isEqualToString:@"不限"]) {
-                [dataArr removeObject:obj];
-            };
+            if ([obj isKindOfClass:[NSString class]]) {
+                NSString *str = (NSString *)obj;
+                if ([str isEqualToString:@"不限"]) {
+                    [dataArr removeObject:obj];
+                };
+            }
+            if ([obj isKindOfClass:[NSArray class]]) {
+                NSArray *smallstr = (NSArray *)obj;
+                [smallstr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([obj isKindOfClass:[NSString class]]) {
+                        NSString *str = (NSString *)obj;
+                        if ([str isEqualToString:@"不限"]) {
+                            [dataArr removeObject:obj];
+                        };
+                    }
+                }];
+            }
         }];
     }
 //  NSLog(@"style %ld--%@" , style,dataSourceaa);

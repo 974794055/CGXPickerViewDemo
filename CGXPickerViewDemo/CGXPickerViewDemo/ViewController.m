@@ -2,8 +2,8 @@
 //  ViewController.m
 //  CGXPickerViewDemo
 //
-//  Created by 曹贵鑫 on 2018/1/31.
-//  Copyright © 2018年 曹贵鑫. All rights reserved.
+//  Created by CGX on 2018/1/31.
+//  Copyright © 2018年 CGX. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-  
+    
     
     
     self.manager = [[CGXPickerViewManager alloc] init];
@@ -126,7 +126,7 @@
             weakSelf.navigationItem.title = selectValue;
         }];
     }else if ([title isEqualToString:@"省,市,县"]){
-//        self.manager.isHaveLimit = YES;
+        //        self.manager.isHaveLimit = YES;
         [CGXPickerView showAddressPickerWithTitle:@"请选择你的城市" DefaultSelected:@[@4, @0,@0] IsAutoSelect:YES Manager:self.manager ResultBlock:^(NSArray *selectAddressArr, NSArray *selectAddressRow) {
             NSLog(@"%@-%@",selectAddressArr,selectAddressRow);
             weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@%@%@", selectAddressArr[0], selectAddressArr[1],selectAddressArr[2]];;;;
@@ -157,7 +157,7 @@
         }];
     }else if ([title isEqualToString:@"教育"]){
         
-//        self.manager.isHaveLimit = YES;
+        //        self.manager.isHaveLimit = YES;
         NSString *defaultSelValue = [[CGXPickerView showStringPickerDataSourceStyle:CGXStringPickerViewStyleEducation Manager:self.manager] objectAtIndex:1];
         [CGXPickerView showStringPickerWithTitle:@"教育" DefaultSelValue:defaultSelValue IsAutoSelect:YES Manager:self.manager ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@--%@",selectValue,selectRow);
@@ -216,7 +216,10 @@
         
         [CGXPickerView showStringPickerWithTitle:@"身高范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
-            weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
+            if ([selectValue isKindOfClass:[NSArray class]]) {
+                NSString *str = [(NSArray *)selectValue componentsJoinedByString:@"-"];//其中"-"号为分隔符
+                weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", str];
+            }
         } Style:CGXStringPickerViewStylHeightScope];
     }else if ([title isEqualToString:@"体重"]){
         
@@ -233,7 +236,10 @@
         
         [CGXPickerView showStringPickerWithTitle:@"体重范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
-            weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
+            if ([selectValue isKindOfClass:[NSArray class]]) {
+                NSString *str = [(NSArray *)selectValue componentsJoinedByString:@"-"];//其中"-"号为分隔符
+                weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", str];
+            }
         } Style:CGXStringPickerViewStylWeightScope];
     }else if ([title isEqualToString:@"年龄"]){
         
@@ -250,7 +256,11 @@
         
         [CGXPickerView showStringPickerWithTitle:@"年龄范围" DefaultSelValue:@[defaultSelValue1,defaultSelValue2] IsAutoSelect:YES Manager:nil ResultBlock:^(id selectValue, id selectRow) {
             NSLog(@"%@",selectValue); ;
-            weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", selectValue];
+            if ([selectValue isKindOfClass:[NSArray class]]) {
+                NSString *str = [(NSArray *)selectValue componentsJoinedByString:@"-"];//其中"-"号为分隔符
+                weakSelf.navigationItem.title = [NSString stringWithFormat:@"%@", str];
+            }
+            
         } Style:CGXStringPickerViewStyleAgeScope];
     }else if ([title isEqualToString:@"星期"]){
         

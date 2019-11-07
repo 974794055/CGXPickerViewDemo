@@ -2,9 +2,16 @@
 //  CGXPickerView.h
 //  CGXPickerView
 //
-//  Created by 曹贵鑫 on 2017/8/23.
-//  Copyright © 2017年 曹贵鑫. All rights reserved.
-//
+//  Created by CGX on 2017/8/23.
+//  Copyright © 2017年 CGX. All rights reserved.
+/*
+下载链接：https://github.com/974794055/CGXPickerViewDemo.git
+作者QQ号：974794055
+群名称：
+群   号：
+版本： 2.4.0
+*/
+
 #import <Foundation/Foundation.h>
 #import "CGXPickerViewManager.h"
 #import <UIKit/UIKit.h>
@@ -65,12 +72,27 @@ typedef NS_ENUM(NSInteger, CGXStringPickerViewStyle) {
                       IsAutoSelect:(BOOL)isAutoSelect
                            Manager:(CGXPickerViewManager *)manager
                        ResultBlock:(CGXAddressResultBlock)resultBlock;
+
+
+/** *************************************注意格式 注意格式 注意格式 ************************************
+注意格式：DateType:(UIDatePickerMode)type
+ 
+UIDatePickerModeTime: @"HH:mm"
+
+UIDatePickerModeDate: @"yyyy-MM-dd"
+
+UIDatePickerModeDateAndTime: @"yyyy-MM-dd HH:mm"
+
+UIDatePickerModeCountDownTimer:@"HH:mm
+*/
+
 /**
  *  显示时间选择器
  *
  *  @param title            标题
  *  @param type             类型（时间、日期、日期和时间、倒计时）
  *  @param defaultSelValue  默认选中的时间（为空，默认选中现在的时间）
+
  *  @param minDateStr       最小时间（如：2015-08-28 00:00:00），可为空
  *  @param maxDateStr       最大时间（如：2018-05-05 00:00:00），可为空
  *  @param isAutoSelect     是否自动选择，即选择完(滚动完)执行结果回调，传选择的结果值

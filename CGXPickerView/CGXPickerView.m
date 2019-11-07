@@ -2,8 +2,8 @@
 //  CGXPickerView.m
 //  CGXPickerView
 //
-//  Created by 曹贵鑫 on 2017/8/23.
-//  Copyright © 2017年 曹贵鑫. All rights reserved.
+//  Created by CGX on 2017/8/23.
+//  Copyright © 2017年 CGX. All rights reserved.
 //
 
 #import "CGXPickerView.h"

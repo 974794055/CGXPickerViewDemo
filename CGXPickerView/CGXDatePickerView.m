@@ -2,8 +2,8 @@
 //  CGXDatePickerView.m
 //  CGXPickerView
 //
-//  Created by 曹贵鑫 on 2017/8/22.
-//  Copyright © 2017年 曹贵鑫. All rights reserved.
+//  Created by CGX on 2017/8/22.
+//  Copyright © 2017年 CGX. All rights reserved.
 //
 
 #import "CGXDatePickerView.h"
@@ -79,7 +79,7 @@
         }
         
         [self initUI];
-//                [_datePicker setDate:[self toDateWithDateString:_selectValue] animated:YES];
+
     }
     return self;
 }
@@ -111,7 +111,7 @@
         }
         // 把当前时间赋值给 _datePicker
         [_datePicker setDate:[NSDate date] animated:YES];
-    
+        [_datePicker setDate:[self toDateWithDateString:_selectValue] animated:YES];
 //        [_datePicker setLocale:[NSLocale systemLocale]];
         // 设置时区
 //        [_datePicker setTimeZone:[NSTimeZone localTimeZone]];
