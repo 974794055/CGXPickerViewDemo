@@ -79,6 +79,7 @@
         }
         
         [self initUI];
+//                [_datePicker setDate:[self toDateWithDateString:_selectValue] animated:YES];
     }
     return self;
 }
@@ -110,6 +111,7 @@
         }
         // 把当前时间赋值给 _datePicker
         [_datePicker setDate:[NSDate date] animated:YES];
+    
 //        [_datePicker setLocale:[NSLocale systemLocale]];
         // 设置时区
 //        [_datePicker setTimeZone:[NSTimeZone localTimeZone]];

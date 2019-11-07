@@ -105,7 +105,7 @@
         fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         NSString *nowStr = [fmt stringFromDate:now];
         
-        [CGXPickerView showDatePickerWithTitle:@"出生年月" DateType:UIDatePickerModeDate DefaultSelValue:nil MinDateStr:@"1900-01-01 00:00:00" MaxDateStr:nowStr IsAutoSelect:YES Manager:nil ResultBlock:^(NSString *selectValue) {
+        [CGXPickerView showDatePickerWithTitle:@"出生年月" DateType:UIDatePickerModeDate DefaultSelValue:@"2019-06-26" MinDateStr:@"1900-01-01 00:00:00" MaxDateStr:nowStr IsAutoSelect:YES Manager:nil ResultBlock:^(NSString *selectValue) {
             NSLog(@"%@",selectValue);
             weakSelf.navigationItem.title = selectValue;;
         }];
