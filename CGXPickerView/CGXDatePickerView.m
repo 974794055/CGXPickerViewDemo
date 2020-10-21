@@ -90,6 +90,9 @@
     self.titleLabel.text = _title;
     // 添加时间选择器
     [self.alertView addSubview:self.datePicker];
+    self.datePicker.frame = CGRectMake(0, self.manager.kTopViewH + 0.5, SCREEN_WIDTH, self.manager.kPickerViewH);
+    self.datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hans"];
+//    en 、zh-Hans、zh-Hant
 }
 
 #pragma mark - 时间选择器
@@ -99,7 +102,10 @@
         _datePicker.backgroundColor = [UIColor whiteColor];
         _datePicker.datePickerMode = _datePickerMode;
         // 设置该UIDatePicker的国际化Locale，以简体中文习惯显示日期，UIDatePicker控件默认使用iOS系统的国际化Locale
-        _datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh_CHS_CN"];
+        _datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:@"zh-Hans"];
+        if (@available(iOS 13.4, *)) {
+            _datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        }
         // 设置时间范围
         if (_minDateStr) {
             NSDate *minDate = [self toDateWithDateString:_minDateStr];
