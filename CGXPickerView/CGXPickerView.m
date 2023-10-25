@@ -18,7 +18,7 @@
                          FileName:(NSString *)fileName
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
-                         Manager:(CGXPickerViewManager *)manager
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
 {
     [CGXStringPickerView showStringPickerWithTitle:title
@@ -31,8 +31,6 @@
             resultBlock(selectValue,selectRow);
         } ;
     }];
-    
-
 }
 
 + (void)showStringPickerWithTitle:(NSString *)title
@@ -48,16 +46,16 @@
                                       IsAutoSelect:isAutoSelect
                                            Manager:(CGXPickerViewManager *)manager
                                        ResultBlock:^(id selectValue, id selectRow) {
-                                           if (resultBlock) {
-                                               resultBlock(selectValue,selectRow);
-                                           } ;
+        if (resultBlock) {
+            resultBlock(selectValue,selectRow);
+        } ;
     }];
 }
 
 + (void)showStringPickerWithTitle:(NSString *)title
                   DefaultSelValue:(id)defaultSelValue
                      IsAutoSelect:(BOOL)isAutoSelect
-                         Manager:(CGXPickerViewManager *)manager
+                          Manager:(CGXPickerViewManager *)manager
                       ResultBlock:(CGXStringResultBlock)resultBlock
                             Style:(CGXStringPickerViewStyle)style
 {
@@ -66,9 +64,9 @@
                                       IsAutoSelect:isAutoSelect
                                            Manager:(CGXPickerViewManager *)manager
                                        ResultBlock:^(id selectValue, id selectRow) {
-                                           if (resultBlock) {
-                                               resultBlock(selectValue,selectRow);
-                                           } ;
+        if (resultBlock) {
+            resultBlock(selectValue,selectRow);
+        } ;
     } Style:style];
 }
 + (NSArray *)showStringPickerDataSourceStyle:(CGXStringPickerViewStyle)style
@@ -135,7 +133,7 @@
             }
         }];
     }
-
+    
 }
 + (void)showAddressPickerWithTitle:(NSString *)title
                    DefaultSelected:(NSArray *)defaultSelectedArr
